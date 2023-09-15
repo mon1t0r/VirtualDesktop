@@ -54,6 +54,8 @@ namespace WindowsDesktop.Interop
 			var shell = Activator.CreateInstance(shellType) as IServiceProvider
 				?? throw new Exception("Failed to create an instance of ImmersiveShell.");
 
+            File.WriteAllText("succ.txt", (guidService ?? type.GUID).ToString() + " - " + type.GUID.ToString() + " - " + (shell is IServiceProvider));
+
 			return shell.QueryService(guidService ?? type.GUID, type.GUID);
 		}
 	}

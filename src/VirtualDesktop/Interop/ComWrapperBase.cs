@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -58,6 +59,8 @@ public abstract class ComWrapperBase<TInterface>
             this._methods[methodName] = methodInfo;
         }
         else throw new NotSupportedException($"Method '{methodName}' is not supported in COM interface '{typeof(TInterface).Name}'.");
+
+        File.WriteAllText("guid.txt", methodName + " - " + typeof(TInterface).Name);
 
         try
         {

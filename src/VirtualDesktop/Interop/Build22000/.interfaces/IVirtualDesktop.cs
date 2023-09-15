@@ -13,10 +13,10 @@ namespace WindowsDesktop.Interop.Build22000
 
         Guid GetID();
 
-        IntPtr Proc5();
-
         HString GetName();
 
         HString GetWallpaperPath();
+
+        bool IsRemote();
     }
 }
