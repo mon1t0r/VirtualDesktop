@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using WindowsDesktop.Interop.Proxy;
@@ -60,7 +61,7 @@ public class VirtualDesktopNotificationService : ComWrapperBase<IVirtualDesktopN
         protected void DestroyedCore(object pDesktopDestroyed, object pDesktopFallback)
             => this.Notification.VirtualDesktopDestroyed(this.Wrap(pDesktopDestroyed), this.Wrap(pDesktopFallback));
 
-        protected void MovedCore(object p0, object pDesktop, int nIndexFrom, int nIndexTo)
+        protected void MovedCore(object pDesktop, int nIndexFrom, int nIndexTo)
             => this.Notification.VirtualDesktopMoved(this.Wrap(pDesktop), nIndexFrom, nIndexTo);
         
         protected void RenamedCore(object pDesktop, HString chName)

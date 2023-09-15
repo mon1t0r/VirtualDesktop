@@ -60,8 +60,6 @@ public abstract class ComWrapperBase<TInterface>
         }
         else throw new NotSupportedException($"Method '{methodName}' is not supported in COM interface '{typeof(TInterface).Name}'.");
 
-        File.WriteAllText("guid.txt", methodName + " - " + typeof(TInterface).Name);
-
         try
         {
             return (T?)methodInfo.Invoke(this.ComObject, parameters);

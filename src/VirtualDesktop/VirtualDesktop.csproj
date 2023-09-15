@@ -43,7 +43,7 @@
 
   <ItemGroup>
     <None Remove="VirtualDesktop.csproj.DotSettings" />
-    <EmbeddedResource Include="Interop\Build22000\.interfaces\IApplicationViewCollection.cs" />
+    <Compile Include="Interop\Build22000\.interfaces\IApplicationView.cs" />
     <EmbeddedResource Include="Interop\Build10240\.interfaces\AssemblyInfo.cs" />
     <EmbeddedResource Include="Interop\Build10240\.interfaces\IApplicationView.cs" />
     <EmbeddedResource Include="Interop\Build10240\.interfaces\IApplicationViewCollection.cs" />
